@@ -4,7 +4,6 @@ jogo = Velha()
 
 # Desenha o tabuleiro inicial
 jogo.desenharTabuleiro()
-print(jogo.verificarVencedor())
 
 '''
 # Jogada do humano
@@ -20,3 +19,11 @@ jogo.tabuleiro[jogadaLinha][jogadaColuna] = 'O'
 print('Máquina jogou')
 jogo.desenharTabuleiro()
 '''
+resultado = jogo.verificarVencedor()
+
+if resultado['X']:
+    print('X venceu')
+elif resultado['O']:
+    print('O venceu')
+else:
+    print('Empate')

@@ -3,7 +3,7 @@ import random
 class Velha():
     def __init__(self):
         # lista
-        self.tabuleiro = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
+        self.tabuleiro = [['X', 'O', 'X'], ['O', 'X', 'O'], ['O', 'X', 'O']]
 
     # desenho do tabuleiro
     def desenharTabuleiro(self):
