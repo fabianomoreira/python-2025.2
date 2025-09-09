@@ -4,7 +4,9 @@ jogo = Velha()
 
 # Desenha o tabuleiro inicial
 jogo.desenharTabuleiro()
+print(jogo.verificarVencedor())
 
+'''
 # Jogada do humano
 jogadaLinha = int(input('Digite a linha: '))
 jogadaColuna = int(input('Digite a coluna: '))
@@ -17,3 +19,4 @@ jogadaColuna = jogo.jogarMaquina()
 jogo.tabuleiro[jogadaLinha][jogadaColuna] = 'O'
 print('Máquina jogou')
 jogo.desenharTabuleiro()
+'''
