@@ -3,6 +3,7 @@ import random
 class Velha():
     def __init__(self):
         # lista
+        self.ganhador = False
         self.tabuleiro = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
 
     # desenho do tabuleiro
@@ -33,6 +34,9 @@ class Velha():
             # diagonal
             dicVencedor[i] = (self.tabuleiro[0][0] == self.tabuleiro[1][1] == self.tabuleiro[2][2] == i) or dicVencedor[i]
             dicVencedor[i] = (self.tabuleiro[0][2] == self.tabuleiro[1][1] == self.tabuleiro[2][0] == i) or dicVencedor[i]
+
+        if dicVencedor['X'] or dicVencedor['O']:
+            self.ganhador = True
 
         return dicVencedor
     
