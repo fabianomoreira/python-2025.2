@@ -10,26 +10,26 @@
 </head>
 <body>
     <h2>Portaria works!!</h2>
-    <h1 style="color: red">{{ descricao }}</h1>
+    <h1 style="color: red">{{ nome_pagina }}</h1>
 
-    <div class="container-fluid">
-        <div class="d-sm-flex align-items-center ">
-            <div>
-                <label>Nome Completo:</label>
-            </div>
-            <div>
-                <input type="text" id="nome" name="nome">
-            </div>
-        </div>
-        <div class="d-sm-flex align-items-center ">
-            <div>
-                <label>CPF:</label>
-            </div>
-            <div>
-                <input type="text" id="cpf" name="cpf">
-            </div>
-        </div>
-    </div>
+        <table style="border: 2px red solid">
+            <tbody>
+                {% for visitante in total_visitantes %}
+                <tr style="border: 2px black solid">
+                    <td style="border: 2px black solid; padding: 4px">{{ visitante.nome_completo }}</td>
+                    <td style="border: 2px black solid; padding: 4px">{{ visitante.cpf }}</td>
+                    <td style="border: 2px black solid; padding: 4px">{{ visitante.horario_chegada }}</td>
+                    <td style="border: 2px black solid; padding: 4px">{{ visitante.horario_autorizacao }}</td>
+                    <td style="border: 2px black solid; padding: 4px">{{ visitante.morador_responsavel }}</td>
+                    <td style="border: 2px black solid; padding: 4px">
+                        <a href="#">
+                            Ver informações
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
     <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
     <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
