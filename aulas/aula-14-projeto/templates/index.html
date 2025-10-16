@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Portaria</title>
+     <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
     <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
 </head>
 <body>
     <h2>Portaria works!!</h2>
     <h1 style="color: red">{{ descricao }}</h1>
 
-    <div>
-        <div>
+    <div class="container-fluid">
+        <div class="d-sm-flex align-items-center ">
             <div>
                 <label>Nome Completo:</label>
             </div>
@@ -20,7 +21,7 @@
                 <input type="text" id="nome" name="nome">
             </div>
         </div>
-        <div>
+        <div class="d-sm-flex align-items-center ">
             <div>
                 <label>CPF:</label>
             </div>
@@ -29,8 +30,9 @@
             </div>
         </div>
     </div>
-</body>
 
-<script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
-<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'js/sb-admin-2.min.js'%}"></script>
+</body>
 </html>
