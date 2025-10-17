@@ -30,6 +30,17 @@
                 {% endfor %}
             </tbody>
         </table>
+        <h2 style="margin-top: 15px;">Porteiros</h2>
+        <table>
+            {% for porteiro in total_porteiros %}
+            <tr style="border: 2px blue dashed">
+                <td style="border: 2px blue dashed; padding: 4px">{{ porteiro.nome_completo }}</td>
+                <td style="border: 2px blue dashed; padding: 4px">{{ porteiro.cpf }}</td>
+                <td style="border: 2px blue dashed; padding: 4px">{{ porteiro.telefone }}</td>
+                <td style="border: 2px blue dashed; padding: 4px">{{ porteiro.data_nascimento }}</td>
+            </tr>
+            {% endfor %}
+        </table>
 
     <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
     <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
