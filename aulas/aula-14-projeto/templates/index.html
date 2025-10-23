@@ -1,49 +1,22 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Controle de Portaria</title>
-     <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
-    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
-</head>
-<body>
-    <h2>Portaria works!!</h2>
-    <h1 style="color: red">{{ nome_pagina }}</h1>
+{% extends "base.html" %}
 
-        <table style="border: 2px red solid">
-            <tbody>
-                {% for visitante in total_visitantes %}
-                <tr style="border: 2px black solid">
-                    <td style="border: 2px black solid; padding: 4px">{{ visitante.nome_completo }}</td>
-                    <td style="border: 2px black solid; padding: 4px">{{ visitante.cpf }}</td>
-                    <td style="border: 2px black solid; padding: 4px">{{ visitante.horario_chegada }}</td>
-                    <td style="border: 2px black solid; padding: 4px">{{ visitante.horario_autorizacao }}</td>
-                    <td style="border: 2px black solid; padding: 4px">{{ visitante.morador_responsavel }}</td>
-                    <td style="border: 2px black solid; padding: 4px">
-                        <a href="#">
-                            Ver informações
-                        </a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <h2 style="margin-top: 15px;">Porteiros</h2>
-        <table>
-            {% for porteiro in total_porteiros %}
-            <tr style="border: 2px blue dashed">
-                <td style="border: 2px blue dashed; padding: 4px">{{ porteiro.nome_completo }}</td>
-                <td style="border: 2px blue dashed; padding: 4px">{{ porteiro.cpf }}</td>
-                <td style="border: 2px blue dashed; padding: 4px">{{ porteiro.telefone }}</td>
-                <td style="border: 2px blue dashed; padding: 4px">{{ porteiro.data_nascimento }}</td>
+{% block conteudo %}
+    <table style="border: 2px red solid">
+        <tbody>
+            {% for visitante in total_visitantes %}
+            <tr style="border: 2px black solid">
+                <td style="border: 2px black solid; padding: 4px">{{ visitante.nome_completo }}</td>
+                <td style="border: 2px black solid; padding: 4px">{{ visitante.cpf }}</td>
+                <td style="border: 2px black solid; padding: 4px">{{ visitante.horario_chegada }}</td>
+                <td style="border: 2px black solid; padding: 4px">{{ visitante.horario_autorizacao }}</td>
+                <td style="border: 2px black solid; padding: 4px">{{ visitante.morador_responsavel }}</td>
+                <td style="border: 2px black solid; padding: 4px">
+                    <a href="#">
+                        Ver informações
+                    </a>
+                </td>
             </tr>
             {% endfor %}
-        </table>
-
-    <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
-    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
-    <script src="{% static 'js/sb-admin-2.min.js'%}"></script>
-</body>
-</html>
+        </tbody>
+    </table>
+{% endblock conteudo %}
