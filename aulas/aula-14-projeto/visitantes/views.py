@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from visitantes.forms import VisitanteForm
+from visitantes.models import Visitante
 
 def registrar_visitante(request):
     form = VisitanteForm()
@@ -9,3 +10,13 @@ def registrar_visitante(request):
     }
 
     return render(request, 'pagina.html', context)
+
+def informacoes_visitante(request, id):
+    visitante = get_object_or_404(Visitante, id=id)
+
+    context = {
+        "nome_pagina": "Informações Visitante",
+        "visitante": visitante
+    }
+
+    return render(request, 'informacoes_visitante.html', context)
